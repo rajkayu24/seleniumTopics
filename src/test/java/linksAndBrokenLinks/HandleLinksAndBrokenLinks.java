@@ -47,11 +47,15 @@ public class HandleLinksAndBrokenLinks {
 		//1==>open conn. 
 		//2==>connect
 	
-		HttpURLConnection conn=(HttpURLConnection) linkUrl.openConnection();//here we r opening conection
+		HttpURLConnection conn=(HttpURLConnection) linskUrl.openConnection();//here we r opening conection
 		//HttpURLConnection class come from java.net method 
 		conn.connect();//send req to server
 		
 		//and now checking response from server
+		//if response is greater than 400 that means we are not get
+		//proper response from the server so that is broken links
+		and if the response is <=400 that means we got proper response from server 
+		//so that is not a broken links
 		if(conn.getResponseCode()>=400) {
 			System.out.println(hrefAttValue+"     "+"====>Broken Link");
 		brokenlinks++;
